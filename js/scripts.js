@@ -1,3 +1,5 @@
+// created an array of objects: array is a list of pokemons, 
+// each object is a pokemon with respective properties. 
 let pokemonList = [
         {name: 'Bulbaaur', 
         height: 0.7,
