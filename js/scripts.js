@@ -51,3 +51,11 @@ let pokemonList = [
         hatchSteps: 5100    
     }
 ];
+
+
+// a for loop to iterate through the Pokemon list and print their values
+
+for(i = 0; i < pokemonList.length; i++){
+    document.write('Pokemon\'s Name: '+ pokemonList[i].name + '<br>' + ' Height:' + pokemonList[i].height + ')' + '<br>' + 'Abilities:' + pokemonList[i].abilities + '<br>' + 'Weight:' + pokemonList[i].weight + '<br>'+ 'Catch Rate:' + pokemonList[i].catchRate + '<br>' + 'Egg Groups:' + pokemonList[i].eggGroups + '<br>' + 'Gender Ratio:' + pokemonList[i].genderRatio + '<br>' + 'Hatch Steps:' + pokemonList[i].hatchSteps + '<br>');
+
+}
