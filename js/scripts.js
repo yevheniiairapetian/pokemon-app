@@ -90,7 +90,7 @@ let pokemonList = [
     },
     {
 //Blastoise
-        name: 'Wartortle', 
+        name: 'Blastoise', 
         height: 1.6,
         abilities: ['Rain-dish', 'Torrent'],
         weight: 85.5,
@@ -101,7 +101,7 @@ let pokemonList = [
     },
     {
 //Caterpie
-        name: 'Wartortle', 
+        name: 'Caterpie', 
         height: 0.3,
         abilities: ['Shield-dust', 'Run-away'],
         weight: 2.9,
