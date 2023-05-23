@@ -54,6 +54,61 @@ let pokemonList = [
         eggGroups:['Monster', 'Dragon'],
         genderRatio:{male:87.5, female:12.5},
         hatchSteps: 5100    
+    },
+    {
+//Charizard
+        name: 'Charizard', 
+        height: 1.7,
+        abilities: ['Blaze', 'Solar-power'],
+        weight: 90.5,
+        catchRate: 0,
+        eggGroups:['Monster', 'Dragon'],
+        genderRatio:{male:87.5, female:12.5},
+        hatchSteps: 5100    
+    },
+    {
+//Squirtle
+        name: 'Squirtle', 
+        height: 0.5,
+        abilities: ['Rain-dish', 'Torrent'],
+        weight: 9,
+        catchRate: 0,
+        eggGroups:['Monster', 'Water 1'],
+        genderRatio:{male:87.5, female:12.5},
+        hatchSteps: 5100    
+    },
+    {
+//Wartortle
+        name: 'Wartortle', 
+        height: 1,
+        abilities: ['Rain-dish', 'Torrent'],
+        weight: 22.5,
+        catchRate: 0,
+        eggGroups:['Monster', 'Water 1'],
+        genderRatio:{male:87.5, female:12.5},
+        hatchSteps: 5100    
+    },
+    {
+//Blastoise
+        name: 'Wartortle', 
+        height: 1.6,
+        abilities: ['Rain-dish', 'Torrent'],
+        weight: 85.5,
+        catchRate: 0,
+        eggGroups:['Monster', 'Water 1'],
+        genderRatio:{male:87.5, female:12.5},
+        hatchSteps: 5100    
+    },
+    {
+//Caterpie
+        name: 'Wartortle', 
+        height: 0.3,
+        abilities: ['Shield-dust', 'Run-away'],
+        weight: 2.9,
+        catchRate: 0,
+        eggGroups:['Bug'],
+        genderRatio:{male:50, female:50},
+        hatchSteps: 3825    
     }
 ];
 
