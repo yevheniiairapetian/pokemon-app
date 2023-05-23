@@ -1,1 +1,1 @@
-# simple-js-app
+# simple pokemon app
