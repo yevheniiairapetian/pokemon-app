@@ -71,8 +71,9 @@ for(i = 0; i < pokemonList.length; i++){
         '<p>' + 'Egg Groups:' + pokemonList[i].eggGroups + '</p>' + 
         '<p>' + 'Gender Ratio:' + '<br>' + '</p>' + 
         '<p class="additional-info">' + 'Male - ' + '</p>' + 
-        pokemonList[i].genderRatio.male + '<p class="additional-info"> ' + 'Female - ' + 
-        '</p>' + pokemonList[i].genderRatio.female + '<p>' + 
+        pokemonList[i].genderRatio.male + 
+        '<p class="additional-info"> ' + 'Female - ' + '</p>' 
+        + pokemonList[i].genderRatio.female + '<p>' + 
         'Hatch Steps:' + pokemonList[i].hatchSteps + '</p>' + 
     '</div>');
         if(pokemonList[i].height === 2 && pokemonList[i].name === 'Venusaur'){
