@@ -1,7 +1,8 @@
 // created an array of objects: array is a list of pokemons, 
 // each object is a pokemon with respective properties. 
 let pokemonList = [
-        {name: 'Bulbaaur', 
+//Bulbasaur
+        {name: 'Bulbasaur', 
         height: 0.7,
         abilities: ['Chlorophyll', 'Overgrow'],
         weight: 6.9,
@@ -11,6 +12,7 @@ let pokemonList = [
         hatchSteps: 5100        
     },
     {
+//Ivysaur
         name: 'Ivysaur', 
         height: 1,
         abilities: ['Chlorophyll', 'Overgrow'],
@@ -21,6 +23,7 @@ let pokemonList = [
         hatchSteps: 5100    
     },
     {
+//Venusaur
         name: 'Venusaur', 
         height: 2,
         abilities: ['Chlorophyll', 'Overgrow'],
@@ -31,6 +34,7 @@ let pokemonList = [
         hatchSteps: 5100    
     },
     {
+//Charmander
         name: 'Charmander', 
         height: 0.6,
         abilities: ['Blaze', 'Solar-power'],
@@ -41,6 +45,7 @@ let pokemonList = [
         hatchSteps: 5100    
     },
     {
+//Charmeleon
         name: 'Charmeleon', 
         height: 1.1,
         abilities: ['Blaze', 'Solar-power'],
