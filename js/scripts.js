@@ -61,6 +61,10 @@ let pokemonList = [
 // a for loop to iterate through the Pokemon list and print their values
 
 for(i = 0; i < pokemonList.length; i++){
-    document.write('Pokemon\'s Name: '+ pokemonList[i].name + '<br>' + ' Height:' + pokemonList[i].height + ')' + '<br>' + 'Abilities:' + pokemonList[i].abilities + '<br>' + 'Weight:' + pokemonList[i].weight + '<br>'+ 'Catch Rate:' + pokemonList[i].catchRate + '<br>' + 'Egg Groups:' + pokemonList[i].eggGroups + '<br>' + 'Gender Ratio:' + pokemonList[i].genderRatio + '<br>' + 'Hatch Steps:' + pokemonList[i].hatchSteps + '<br>');
-
+    document.write('<p>' + 'Pokemon\'s Name: '+ pokemonList[i].name + '</p>' + '<p>' + 'Height:' + pokemonList[i].height + 'm'+ '</p>' + '<p>' + 'Abilities:' + pokemonList[i].abilities + '</p>' + '<p>' + 'Weight:' + pokemonList[i].weight + 'kg' + '</p>' + '<p>' + 'Catch Rate:' + pokemonList[i].catchRate + '</p>' + '<p>' + 'Egg Groups:' + pokemonList[i].eggGroups + '</p>' + '<p>' + 'Gender Ratio:' + '<br>' + '<span>' + 'Male - ' + '</span>' + pokemonList[i].genderRatio.male + '<span> ' + 'Female - ' + '</span>' + pokemonList[i].genderRatio.female + '</p>' + '<p>' + 'Hatch Steps:' + pokemonList[i].hatchSteps + '</p>');
+        if(pokemonList[i].height === 2 && pokemonList[i].name === 'Venusaur'){
+            document.write('WOW! That\'s a big height!' + '<br>');
+        }else if(pokemonList[i].height === 0.6 && pokemonList[i].name === 'Charmander'){
+            document.write('WOW! So tiny!' + '<br>');
+        }
 }
