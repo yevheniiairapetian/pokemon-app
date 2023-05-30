@@ -1,5 +1,8 @@
 // created an array of objects: array is a list of pokemons, 
 // each object is a pokemon with respective properties. 
+
+
+let pokemonRepository = (function(){
 let pokemonList = [
 //Bulbasaur
         {name: 'Bulbasaur', 
@@ -110,12 +113,36 @@ let pokemonList = [
         genderRatio:{male:50, female:50},
         hatchSteps: 3825    
     }
-];
+    ];
+
+
+    function add(item){
+        // 
+        if(typeof item === 'object'){
+            return pokemonList.push(item);
+        }
+        else{
+            return 'Not allowed'
+        }
+
+    }
+
+    function getAll(){
+        return pokemonList;
+    }
+    
+    return {
+        add: add,
+        getAll: getAll
+    };
+
+})();
+
 
 
 // a for loop to iterate through the Pokemon list and print their values
 
-pokemonList.forEach(function (pokemon){
+pokemonRepository.getAll().forEach(function (pokemon){
     document.write(
     '<div class="pokemon-items">' + 
         '<p>' + 'Pokemon\'s Name: '+ pokemon.name + '</p>' + 
