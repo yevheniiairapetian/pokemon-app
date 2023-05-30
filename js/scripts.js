@@ -115,25 +115,25 @@ let pokemonList = [
 
 // a for loop to iterate through the Pokemon list and print their values
 
-for(i = 0; i < pokemonList.length; i++){
+pokemonList.forEach(function (pokemon){
     document.write(
     '<div class="pokemon-items">' + 
-        '<p>' + 'Pokemon\'s Name: '+ pokemonList[i].name + '</p>' + 
-        '<p>' + 'Height:' + pokemonList[i].height + 'm'+ '</p>' + 
-        '<p>' + 'Abilities:' + pokemonList[i].abilities + '</p>' + 
-        '<p>' + 'Weight:' + pokemonList[i].weight + 'kg' + '</p>' + 
-        '<p>' + 'Catch Rate:' + pokemonList[i].catchRate + '</p>' + 
-        '<p>' + 'Egg Groups:' + pokemonList[i].eggGroups + '</p>' + 
+        '<p>' + 'Pokemon\'s Name: '+ pokemon.name + '</p>' + 
+        '<p>' + 'Height:' + pokemon.height + 'm'+ '</p>' + 
+        '<p>' + 'Abilities:' + pokemon.abilities + '</p>' + 
+        '<p>' + 'Weight:' + pokemon.weight + 'kg' + '</p>' + 
+        '<p>' + 'Catch Rate:' + pokemon.catchRate + '</p>' + 
+        '<p>' + 'Egg Groups:' + pokemon.eggGroups + '</p>' + 
         '<p>' + 'Gender Ratio:' + '<br>' + '</p>' + 
         '<p class="additional-info">' + 'Male - ' + '</p>' + 
-        pokemonList[i].genderRatio.male + 
+        pokemon.genderRatio.male + 
         '<p class="additional-info"> ' + 'Female - ' + '</p>' 
-        + pokemonList[i].genderRatio.female + '<p>' + 
-        'Hatch Steps:' + pokemonList[i].hatchSteps + '</p>' + 
+        + pokemon.genderRatio.female + '<p>' + 
+        'Hatch Steps:' + pokemon.hatchSteps + '</p>' + 
     '</div>');
-        if(pokemonList[i].height === 2 && pokemonList[i].name === 'Venusaur'){
+        if(pokemon.height === 2 && pokemon.name === 'Venusaur'){
             document.write('<p class="additional-info">' + 'WOW! That\'s a big height!' + '</p>');
-        }else if(pokemonList[i].height === 0.6 && pokemonList[i].name === 'Charmander'){
+        }else if(pokemon.height === 0.6 && pokemon.name === 'Charmander'){
             document.write('<p class="additional-info">' + 'WOW! So tiny!' + '</p>');
         }
-}
+})
