@@ -55,12 +55,12 @@ body{
 }
 
 p{
-    color: #2E1F27;
+    color: #F0E7E7;
     padding: 10px 20px;
 }
 
 p:hover{
-    background-color: #F4C94E;
+    background-color: #2C2020;
     transition: background-color 0.4s ease-in-out; 
 }
 
@@ -70,18 +70,23 @@ span{
 }
 
 .pokemon-items{
-    background-color: #E7E393;
+    background-color: #6A6666;
     padding:10px;
 }
 
 .additional-info{
+    color:black;
     padding:10px;
     background-color: #F4C95D;
 }
 
+.additional-info:hover{
+    color:#F0E7E7;
+}
+
 nav{
     text-align: center;
-    background-color: #DD7230;
+    background-color: #2C2020;
 }
 
 .additional-links{
