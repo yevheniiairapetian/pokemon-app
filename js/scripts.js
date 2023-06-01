@@ -164,11 +164,32 @@ let pokemonRepository = (function () {
     function getAll() {
         return pokemonList;
     }
+    
 
+    function addListItem(pokemon) {
+        let pokemonListContainer = document.querySelector('.pokemon-list');
+        let pokemonListItem = document.createElement('li');
+        let button = document.createElement('button');
+        button.innerText = pokemon.name;
+        button.classList.add('default-button');
+        pokemonListContainer.appendChild(pokemonListItem);
+        pokemonListItem.appendChild(button);
+        button.addEventListener('click', function (){
+            showDetails(pokemon);
+        })
+
+    }
+    
+    function showDetails(pokemon){
+        console.log(pokemon);
+    }
+    
     // this return statement returns the object with add and getAll methods
     return {
         add: add,
-        getAll: getAll
+        getAll: getAll,
+        addListItem: addListItem,
+        showDetails: showDetails
     };
 
 })();
@@ -178,24 +199,6 @@ let pokemonRepository = (function () {
 // a forEach function to iterate through the Pokemon list and print their values
 
 pokemonRepository.getAll().forEach(function (pokemon) {
-    document.write(
-        '<div class="pokemon-items">' +
-        '<p>' + 'Pokemon\'s Name: ' + pokemon.name + '</p>' +
-        '<p>' + 'Height:' + pokemon.height + 'm' + '</p>' +
-        '<p>' + 'Abilities:' + pokemon.abilities + '</p>' +
-        '<p>' + 'Weight:' + pokemon.weight + 'kg' + '</p>' +
-        '<p>' + 'Catch Rate:' + pokemon.catchRate + '</p>' +
-        '<p>' + 'Egg Groups:' + pokemon.eggGroups + '</p>' +
-        '<p>' + 'Gender Ratio:' + '<br>' + '</p>' +
-        '<p class="additional-info">' + 'Male - ' + '</p>' +
-        pokemon.genderRatio.male +
-        '<p class="additional-info"> ' + 'Female - ' + '</p>' +
-        pokemon.genderRatio.female + '<p>' +
-        'Hatch Steps:' + pokemon.hatchSteps + '</p>' +
-        '</div>');
-    if (pokemon.height === 2 && pokemon.name === 'Venusaur') {
-        document.write('<p class="additional-info">' + 'WOW! That\'s a big height!' + '</p>');
-    } else if (pokemon.height === 0.6 && pokemon.name === 'Charmander') {
-        document.write('<p class="additional-info">' + 'WOW! So tiny!' + '</p>');
-    }
+    
+    pokemonRepository.addListItem(pokemon);
 })

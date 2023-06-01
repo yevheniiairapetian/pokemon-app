@@ -49,6 +49,10 @@ table {
 }
 }
 
+ul li{
+    list-style: none;
+}
+
 body{
     font-size:16px;
     font-family: "Helvetica Neue", Helvetica, Arial;
@@ -87,6 +91,11 @@ span{
 nav{
     text-align: center;
     background-color: #2C2020;
+    
+}
+
+nav a img{
+    animation: animation 2s linear;
 }
 
 .additional-links{
@@ -99,3 +108,39 @@ nav{
 .additional-links:hover{
     text-decoration:underline;
 }
+
+.default-button{
+    color:#F0E7E7;
+    padding: 12px 18px;
+    background-color:#6A6666;
+    font-size:16px;
+}
+
+@keyframes animation{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.default-button:hover{
+    opacity:0.8;
+    padding-right: 32px;
+    transition:opacity 0.3s ease;
+    background-image:url('../assets/pokemon-btn.png');
+    background-repeat:no-repeat;
+    background-position: right center;
+    background-size: 28px 28px;
+
+}
+
+.default-button:active{
+    background-color:#adadad;
+    color:#000;
+}
+
+.default-button:focus{
+    cursor:pointer;
+    outline: 2px solid pink;
+    font-weight:bolder;
+}
+
