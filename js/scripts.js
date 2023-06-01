@@ -164,7 +164,8 @@ let pokemonRepository = (function () {
     function getAll() {
         return pokemonList;
     }
-    
+
+//creates a list of pokemons and shows them when clicked
 
     function addListItem(pokemon) {
         let pokemonListContainer = document.querySelector('.pokemon-list');
@@ -174,17 +175,18 @@ let pokemonRepository = (function () {
         button.classList.add('default-button');
         pokemonListContainer.appendChild(pokemonListItem);
         pokemonListItem.appendChild(button);
-        button.addEventListener('click', function (){
+        button.addEventListener('click', function () {
             showDetails(pokemon);
         })
 
     }
-    
-    function showDetails(pokemon){
+//logs the pokemon object to the console
+
+    function showDetails(pokemon) {
         console.log(pokemon);
     }
-    
-    // this return statement returns the object with add and getAll methods
+
+    // this return statement returns the object with add. addListItem, showDetails and getAll methods
     return {
         add: add,
         getAll: getAll,
@@ -199,6 +201,6 @@ let pokemonRepository = (function () {
 // a forEach function to iterate through the Pokemon list and print their values
 
 pokemonRepository.getAll().forEach(function (pokemon) {
-    
+
     pokemonRepository.addListItem(pokemon);
 })
