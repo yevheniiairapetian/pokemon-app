@@ -103,7 +103,7 @@ nav a{
 }
 
 nav a img{
-    animation: animation 2s linear;
+    animation: animation-logo 2s linear;
 }
 
 .additional-links{
@@ -115,6 +115,7 @@ nav a img{
 
 .additional-links:hover{
     text-decoration:underline;
+    
 }
 
 .default-button{
@@ -124,20 +125,45 @@ nav a img{
     font-size:16px;
 }
 
-@keyframes animation{
+@keyframes animation-logo{
     100%{
         transform: rotate(360deg);
     }
 }
 
+@keyframes animation-btn{
+    0%{
+        background-position: left -4px, right -4px;
+    }
+    50%{
+        background-position: left 10px, right 10px;
+    }
+    100%{
+        background-position: left -4px, right -4px;
+    }
+}
+
+/* @keyframes animation-btn-2{
+    0%{
+        
+    }
+    50%{
+        
+    }
+    100%{
+        
+    }
+} */
+
 .default-button:hover{
     opacity:0.8;
     padding-right: 32px;
     transition:opacity 0.3s ease;
-    background-image:url('../assets/pokemon-btn.png');
-    background-repeat:no-repeat;
-    background-position: right center;
+    background-image:url('../assets/pokemon-btn.png'), url('../assets/pokemon-btn.png');
+    background-repeat:no-repeat, no-repeat;
+    background-position: 0 0, 50% 50%;
     background-size: 28px 28px;
+    animation: animation-btn 2s linear infinite;
 
 }
 
