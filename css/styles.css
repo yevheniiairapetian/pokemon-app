@@ -176,6 +176,11 @@ nav a img{
     cursor:pointer;
     outline: 2px solid pink;
     font-weight:bolder;
+    background-image:url('../assets/pokemon-btn.png'), url('../assets/pokemon-btn.png');
+    background-repeat:no-repeat, no-repeat;
+    background-position: 0 0, 50% 50%;
+    background-size: 28px 28px;
+    animation: animation-btn 2s linear infinite;
 }
 
 @media screen and (max-width:420px){
