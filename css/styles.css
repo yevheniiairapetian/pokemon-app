@@ -151,11 +151,61 @@ nav a img{
      
 }
 
+
+
 .default-button{
     width:90%;
 }
 
 footer{
     text-align:center;
+    background-color: #2C2020;
+    height: 100px;
+    padding-top:25px;
+}
+footer .additional-links{
+    padding:0;
+}
+}
+
+@media screen and (min-width:421px) and (max-width: 920px){
+    main ul.pokemon-list{
+     text-align:center;   
+     padding:0;
+     
+}
+
+.default-button{
+    width:70%;
+}
+footer{
+    text-align:center;
+    background-color: #2C2020;
+    height: 100px;
+    padding-top:25px;
+}
+footer .additional-links{
+    padding:0;
+}
+}
+
+@media screen and (min-width:421px) and (min-width: 921px){
+    main ul.pokemon-list{
+     text-align:center;   
+     padding:0;
+     
+}
+
+.default-button{
+    width:50%;
+}
+footer{
+    text-align:center;
+    background-color: #2C2020;
+    height: 100px;
+    padding-top:25px;
+}
+footer .additional-links{
+    padding:0;
 }
 }
