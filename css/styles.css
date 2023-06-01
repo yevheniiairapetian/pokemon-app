@@ -91,7 +91,15 @@ span{
 nav{
     text-align: center;
     background-color: #2C2020;
+    height:125px;
     
+}
+
+nav a{
+    color:white;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 nav a img{
