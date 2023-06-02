@@ -1,4 +1,4 @@
-*{
+
     /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -47,7 +47,7 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-}
+
 
 ul li{
     list-style: none;
@@ -103,6 +103,20 @@ span{
     }
 }
 
+@keyframes nav-link-animation-2{
+    0%{
+        color: #pink;
+    }
+
+    50%{
+        color: #F0E7E7;
+    }
+
+    100%{
+        color: pink;
+    }
+}
+
 nav{
     text-align: center;
     background-color: #2C2020;
@@ -115,11 +129,9 @@ nav a{
     text-decoration: none;
     text-transform: uppercase;
     text-align: center;
+    animation: nav-link-animation 3s ease;
 }
 
-/* nav a:{
-    animation: nav-link-animation 3s ease;
-} */
 
 nav a img{
     animation: animation-logo 2s linear;
@@ -164,17 +176,18 @@ nav a img{
     }
 }
 
-/* @keyframes animation-btn-2{
+@keyframes animation-btn-2{
     0%{
-        
+        background-position: 30% 90%;
     }
     50%{
-        
+        background-position: 75% 90%;
     }
     100%{
-        
+        background-position: 30% 90%;
     }
-} */
+}
+
 
 .default-button:hover{
     cursor:pointer;
@@ -205,14 +218,6 @@ nav a img{
     animation: animation-btn 2s linear infinite;
 }
 
-@media screen and (max-width:420px){
-    main ul.pokemon-list{
-     text-align:center;   
-     padding:0;
-     
-}
-
-
 
 .default-button{
     width:90%;
@@ -227,33 +232,97 @@ footer{
 footer .additional-links{
     padding:0;
 }
+
+@media screen and (max-width: 159px){
+    button.default-button:hover, button.default-button:focus{
+        background-image:url('../assets/pokemon-btn.png');
+        background-position: bottom right;
+        background-size: 18px 18px;
+        animation: animation-btn-2 2s linear infinite;
+        padding:24px 0 24px 0;
+    }
+
+    nav img{
+        width: 60%;
+    }
+    a.logo-link{
+        font-size: 12px;
+        animation: nav-link-animation-2 2s linear !important; 
+    }
+
+    .default-button{
+        font-size:14px;
+        width: 100%;
+        padding:22px 0 22px 0;
+    }
+
+    main{
+        text-align:center;
+    }
+    main ul.pokemon-list{
+        margin:0 auto;
+    }
+    body{
+        margin:0;
+    }
+    footer{
+        width:100%;
+        height: 150px;
+        text-align:center;
+    }
+
+    footer p, footer a{
+        font-size:12px;
+    }
 }
 
-@media screen and (min-width:160px) and (max-width: 420px){
+@media screen and (min-width:159px) and (max-width: 319px){
+
+    body{
+        margin:0;
+    }
+
+    .default-button{
+        width:100%;
+    }
     p, .default-button, .additional-links, .logo-link{
-        font-size:14px;
+        font-size:13px;
     }
 
     footer{
         padding:20px 0 0 0;
         height:160px;
+        width:100%;
     }
 
     .default-button:hover, .default-button:focus{
-        background-size: 18px;
+        background-size: 21px;
     }
 
     nav img{
         width:80px;
         height:80px;
     }
+    main ul.pokemon-list{
+        margin:0 auto;
+    }
+    nav, footer{
+        width:100%;
+    }
+    main{
+        text-align:center;
+    }
 }
 
-@media screen and (min-width:421px) and (max-width: 920px){
+@media screen and (min-width:320px) and (max-width: 920px){
     main ul.pokemon-list{
      text-align:center;   
      padding:0;
      
+}
+
+nav, footer{
+    width:100%;
 }
 
 .default-button{
