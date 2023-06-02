@@ -229,6 +229,26 @@ footer .additional-links{
 }
 }
 
+@media screen and (min-width:160px) and (max-width: 420px){
+    p, .default-button, .additional-links, .logo-link{
+        font-size:14px;
+    }
+
+    footer{
+        padding:20px 0 0 0;
+        height:160px;
+    }
+
+    .default-button:hover, .default-button:focus{
+        background-size: 18px;
+    }
+
+    nav img{
+        width:80px;
+        height:80px;
+    }
+}
+
 @media screen and (min-width:421px) and (max-width: 920px){
     main ul.pokemon-list{
      text-align:center;   
@@ -250,7 +270,7 @@ footer .additional-links{
 }
 }
 
-@media screen and (min-width:421px) and (min-width: 921px){
+@media screen and (min-width: 921px){
     main ul.pokemon-list{
      text-align:center;   
      padding:0;
