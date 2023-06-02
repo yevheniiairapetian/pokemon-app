@@ -156,6 +156,7 @@ nav a img{
 } */
 
 .default-button:hover{
+    cursor:pointer;
     opacity:0.8;
     padding-right: 32px;
     transition:opacity 0.3s ease;
