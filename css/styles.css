@@ -88,6 +88,21 @@ span{
     color:#F0E7E7;
 }
 
+@keyframes nav-link-animation{
+    0%{
+        color: #pink;
+    }
+
+    50%{
+        color: #F0E7E7;
+        font-size:17px;
+    }
+
+    100%{
+        color: pink;
+    }
+}
+
 nav{
     text-align: center;
     background-color: #2C2020;
@@ -102,9 +117,15 @@ nav a{
     text-align: center;
 }
 
+/* nav a:{
+    animation: nav-link-animation 3s ease;
+} */
+
 nav a img{
     animation: animation-logo 2s linear;
 }
+
+
 
 .additional-links{
     color: #F5f5f5;
