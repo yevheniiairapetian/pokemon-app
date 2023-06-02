@@ -125,6 +125,10 @@ nav{
     
 }
 
+main{
+    background-color: #adadad;
+}
+
 nav a{
     color:white;
     text-decoration: none;
