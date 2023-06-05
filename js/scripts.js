@@ -7,7 +7,7 @@ window.onload = function(){
 
 let pokemonRepository = (function () {
     let pokemonList = [];
-    
+
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
     // this function add an item to the array of pokemons checking
@@ -69,6 +69,20 @@ let pokemonRepository = (function () {
         })
       }
 
+
+      function loadDetails(pokemon) {
+        let url = pokemon.detailsUrl;
+        return fetch(url).then(function (response) {
+          return response.json();
+        }).then(function (details) {
+          // Now we add the details to the item
+          pokemon.imageUrl = details.sprites.front_default;
+          pokemon.height = details.height;
+          pokemon.types = details.types;
+        }).catch(function (e) {
+          console.error(e);
+        });
+      }
     // this return statement returns the object with add. addListItem, showDetails and getAll methods
     return {
         add: add,
