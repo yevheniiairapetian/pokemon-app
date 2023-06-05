@@ -99,8 +99,9 @@ let pokemonRepository = (function () {
 
 // a forEach function to iterate through the Pokemon list and print their values
 
-pokemonRepository.getAll().forEach(function (pokemon) {
-
-    pokemonRepository.addListItem(pokemon);
+pokemonRepository.loadList().then(function () {
+    pokemonRepository.getAll().forEach(function (pokemon) {
+      pokemonRepository.addListItem(pokemon);
+    });
 })
 
