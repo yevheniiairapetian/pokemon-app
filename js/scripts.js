@@ -1,7 +1,7 @@
 // created an array of objects: array is a list of pokemons, 
 // each object is a pokemon with respective properties. 
 //add the IIFE containing the pokemonList array
-window.onload = function(){
+window.onload = function () {
     document.querySelector('.logo-link').style.animation = 'nav-link-animation 3s linear';
 }
 
@@ -16,8 +16,7 @@ let pokemonRepository = (function () {
     function add(pokemon) {
         // 
         if (typeof pokemon === 'object' &&
-        "name" in pokemon)
-         {
+            "name" in pokemon) {
             return pokemonList.push(pokemon);
         } else {
             return 'Not allowed'
@@ -31,7 +30,7 @@ let pokemonRepository = (function () {
         return pokemonList;
     }
 
-//creates a list of pokemons and shows them when clicked
+    //creates a list of pokemons and shows them when clicked
 
     function addListItem(pokemon) {
         let pokemonListContainer = document.querySelector('.pokemon-list');
@@ -46,68 +45,68 @@ let pokemonRepository = (function () {
         })
 
     }
-//logs the pokemon object to the console
-// function showLoadingMessage(){
-//     let message = document.createElement('p');
-//     message.innerText  = 'Loading data...';
-//     message.classList.add('message');
-//     let main = document.querySelector('main');
-//     main.appendChild(message);
+    //logs the pokemon object to the console
+    // function showLoadingMessage(){
+    //     let message = document.createElement('p');
+    //     message.innerText  = 'Loading data...';
+    //     message.classList.add('message');
+    //     let main = document.querySelector('main');
+    //     main.appendChild(message);
 
-// }
+    // }
 
-// function hideLoadingMessage() {
-//     let message = document.getElementsByClassName('message');
-//     message.style.display = 'none';
-// }
+    // function hideLoadingMessage() {
+    //     let message = document.getElementsByClassName('message');
+    //     message.style.display = 'none';
+    // }
 
     function showDetails(pokemon) {
         pokemonRepository.loadDetails(pokemon).then(function () {
             console.log(pokemon);
-          });
+        });
     }
 
     function loadList() {
-        
+
         // showLoadingMessage();
         return fetch(apiUrl).then(function (response) {
-          return response.json();
+            return response.json();
         }).then(function (json) {
-          json.results.forEach(function (item) {
-            
-            // hideLoadingMessage();
-            let pokemon = {
-              name: item.name,
-              detailsUrl: item.url
-            };
-            add(pokemon);
-            console.log(pokemon);
-          });
+            json.results.forEach(function (item) {
+
+                // hideLoadingMessage();
+                let pokemon = {
+                    name: item.name,
+                    detailsUrl: item.url
+                };
+                add(pokemon);
+                console.log(pokemon);
+            });
         }).catch(function (e) {
             // hideLoadingMessage();
-                  
-          console.error(e);
-          
+
+            console.error(e);
+
         })
-      }
+    }
 
 
-      function loadDetails(pokemon) {
+    function loadDetails(pokemon) {
         // showLoadingMessage();
         let url = pokemon.detailsUrl;
         return fetch(url).then(function (response) {
-          return response.json();
+            return response.json();
         }).then(function (details) {
             // hideLoadingMessage();
-          // Now we add the details to the item
-          pokemon.imageUrl = details.sprites.front_default;
-          pokemon.height = details.height;
-          pokemon.types = details.types;
+            // Now we add the details to the item
+            pokemon.imageUrl = details.sprites.front_default;
+            pokemon.height = details.height;
+            pokemon.types = details.types;
         }).catch(function (e) {
             // hideLoadingMessage();
-          console.error(e);
+            console.error(e);
         });
-      }
+    }
     // this return statement returns the object with add. addListItem, showDetails and getAll methods
     return {
         add: add,
@@ -126,7 +125,6 @@ let pokemonRepository = (function () {
 
 pokemonRepository.loadList().then(function () {
     pokemonRepository.getAll().forEach(function (pokemon) {
-      pokemonRepository.addListItem(pokemon);
+        pokemonRepository.addListItem(pokemon);
     });
 })
-
