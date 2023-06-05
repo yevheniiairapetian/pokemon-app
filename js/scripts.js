@@ -8,6 +8,8 @@ window.onload = function () {
 let pokemonRepository = (function () {
     let pokemonList = [];
 
+    // a promise URL
+
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=850';
 
     // this function add an item to the array of pokemons checking
@@ -45,7 +47,8 @@ let pokemonRepository = (function () {
         })
 
     }
-    //logs the pokemon object to the console
+    //function to show a loading message when the promise is executing
+
     // function showLoadingMessage(){
     //     let message = document.createElement('p');
     //     message.innerText  = 'Loading data...';
@@ -55,11 +58,13 @@ let pokemonRepository = (function () {
 
     // }
 
+    //function to hide a loading message when the promise has stopped executing
+
     // function hideLoadingMessage() {
     //     let message = document.getElementsByClassName('message');
     //     message.style.display = 'none';
     // }
-
+    //function with the promise to show the details about the pokemons
     function showDetails(pokemon) {
         pokemonRepository.loadDetails(pokemon).then(function () {
             console.log(pokemon);
@@ -107,7 +112,7 @@ let pokemonRepository = (function () {
             console.error(e);
         });
     }
-    // this return statement returns the object with add. addListItem, showDetails and getAll methods
+    // this return statement returns the object with methods
     return {
         add: add,
         getAll: getAll,
