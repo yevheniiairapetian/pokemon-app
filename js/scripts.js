@@ -7,14 +7,18 @@ window.onload = function(){
 
 let pokemonRepository = (function () {
     let pokemonList = [];
+    
+    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
     // this function add an item to the array of pokemons checking
     // the type of entry
 
-    function add(item) {
+    function add(pokemon) {
         // 
-        if (typeof item === 'object') {
-            return pokemonList.push(item);
+        if (typeof pokemon === 'object' &&
+        "name" in pokemon)
+         {
+            return pokemonList.push(pokemon);
         } else {
             return 'Not allowed'
         }
@@ -47,6 +51,23 @@ let pokemonRepository = (function () {
     function showDetails(pokemon) {
         console.log(pokemon);
     }
+
+    function loadList() {
+        return fetch(apiUrl).then(function (response) {
+          return response.json();
+        }).then(function (json) {
+          json.results.forEach(function (item) {
+            let pokemon = {
+              name: item.name,
+              detailsUrl: item.url
+            };
+            add(pokemon);
+            console.log(pokemon);
+          });
+        }).catch(function (e) {
+          console.error(e);
+        })
+      }
 
     // this return statement returns the object with add. addListItem, showDetails and getAll methods
     return {
