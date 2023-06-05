@@ -49,7 +49,9 @@ let pokemonRepository = (function () {
 //logs the pokemon object to the console
 
     function showDetails(pokemon) {
-        console.log(pokemon);
+        pokemonRepository.loadDetails(pokemon).then(function () {
+            console.log(pokemon);
+          });
     }
 
     function loadList() {
