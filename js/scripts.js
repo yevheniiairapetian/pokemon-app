@@ -8,7 +8,7 @@ window.onload = function(){
 let pokemonRepository = (function () {
     let pokemonList = [];
 
-    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=850';
 
     // this function add an item to the array of pokemons checking
     // the type of entry
@@ -47,6 +47,19 @@ let pokemonRepository = (function () {
 
     }
 //logs the pokemon object to the console
+// function showLoadingMessage(){
+//     let message = document.createElement('p');
+//     message.innerText  = 'Loading data...';
+//     message.classList.add('message');
+//     let main = document.querySelector('main');
+//     main.appendChild(message);
+
+// }
+
+// function hideLoadingMessage() {
+//     let message = document.getElementsByClassName('message');
+//     message.style.display = 'none';
+// }
 
     function showDetails(pokemon) {
         pokemonRepository.loadDetails(pokemon).then(function () {
@@ -55,10 +68,14 @@ let pokemonRepository = (function () {
     }
 
     function loadList() {
+        
+        // showLoadingMessage();
         return fetch(apiUrl).then(function (response) {
           return response.json();
         }).then(function (json) {
           json.results.forEach(function (item) {
+            
+            // hideLoadingMessage();
             let pokemon = {
               name: item.name,
               detailsUrl: item.url
@@ -67,21 +84,27 @@ let pokemonRepository = (function () {
             console.log(pokemon);
           });
         }).catch(function (e) {
+            // hideLoadingMessage();
+                  
           console.error(e);
+          
         })
       }
 
 
       function loadDetails(pokemon) {
+        // showLoadingMessage();
         let url = pokemon.detailsUrl;
         return fetch(url).then(function (response) {
           return response.json();
         }).then(function (details) {
+            // hideLoadingMessage();
           // Now we add the details to the item
           pokemon.imageUrl = details.sprites.front_default;
           pokemon.height = details.height;
           pokemon.types = details.types;
         }).catch(function (e) {
+            // hideLoadingMessage();
           console.error(e);
         });
       }
