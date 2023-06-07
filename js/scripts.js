@@ -47,48 +47,23 @@ let pokemonRepository = (function () {
         })
 
     }
-    //function to show a loading message when the promise is executing
 
-    // function showLoadingMessage(){
-    //     let message = document.createElement('p');
-    //     message.innerText  = 'Loading data...';
-    //     message.classList.add('message');
-    //     let main = document.querySelector('main');
-    //     main.appendChild(message);
-
-    // }
-
-    //function to hide a loading message when the promise has stopped executing
-
-    // function hideLoadingMessage() {
-    //     let message = document.getElementsByClassName('message');
-    //     message.style.display = 'none';
-    // }
-    //function with the promise to show the details about the pokemons
-    function showDetails(pokemon) {
-        pokemonRepository.loadDetails(pokemon).then(function () {
-            console.log(pokemon);
-        });
-    }
 
     function loadList() {
 
-        // showLoadingMessage();
+        
         return fetch(apiUrl).then(function (response) {
             return response.json();
         }).then(function (json) {
             json.results.forEach(function (item) {
-
-                // hideLoadingMessage();
                 let pokemon = {
                     name: item.name,
                     detailsUrl: item.url
                 };
                 add(pokemon);
-                console.log(pokemon);
             });
         }).catch(function (e) {
-            // hideLoadingMessage();
+           
 
             console.error(e);
 
@@ -96,35 +71,73 @@ let pokemonRepository = (function () {
     }
 
 
-    function loadDetails(pokemon) {
-        // showLoadingMessage();
-        let url = pokemon.detailsUrl;
+    function loadDetails(item) {
+        let url = item.detailsUrl;
         return fetch(url).then(function (response) {
             return response.json();
         }).then(function (details) {
-            // hideLoadingMessage();
             // Now we add the details to the item
-            pokemon.imageUrl = details.sprites.front_default;
-            pokemon.height = details.height;
-            pokemon.types = details.types;
+            item.imageUrl = details.sprites.front_default;
+            item.height = details.height;
+            item.types = details.types;
+            showModal(item);
         }).catch(function (e) {
-            // hideLoadingMessage();
             console.error(e);
         });
     }
+
+    function showDetails(pokemon) {
+        loadDetails(pokemon);
+    }
+
+    function showModal(pokemon) {
+
+        pokemonRepository.loadDetails(pokemon).then(function () {
+            let modalContainer = document.querySelector("#modal-container");
+            modalContainer.classList.add("is-visible");
+            let modalTitle = document.querySelector("#modal-heading");
+
+            modalTitle.innerText = pokemon.name;
+
+            let modalImage = document.querySelector("#modal-image");
+
+            modalImage.src = pokemon.imageUrl;
+
+            let modalText = document.querySelector("#modal-text");
+
+            modalText.innerText = "Height: " + pokemon.height;
+
+            let modalCloseButton = document.querySelector("#close-modal-button");
+
+            modalCloseButton.innerText = "x";
+
+            modalCloseButton.addEventListener("click", function () {
+                closeModal();
+            });
+
+        });
+
+        function closeModal() {
+            let modalContainer = document.querySelector("#modal-container");
+            modalContainer.classList.remove("is-visible");
+            modalContainer.classList.add("modal-container-hidden");
+            modalCloseButton.innerHtml = '';
+        }
+    }
+
     // this return statement returns the object with methods
     return {
         add: add,
         getAll: getAll,
         loadList: loadList,
+        showModal: showModal,
         loadDetails: loadDetails,
         addListItem: addListItem,
-        showDetails: showDetails
+        showDetails: showDetails,
+
     };
 
 })();
-
-
 
 // a forEach function to iterate through the Pokemon list and print their values
 
