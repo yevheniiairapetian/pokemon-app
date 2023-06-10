@@ -5,3 +5,4 @@
 ### Ajax
 ### Vanilla JS
 ### CSS
+### Responsive design
