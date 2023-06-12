@@ -35,14 +35,14 @@ let pokemonRepository = (function () {
     //creates a list of pokemons and shows them when clicked
 
     function addListItem(pokemon) {
-        let pokemonListContainer = document.querySelector('.pokemon-list');
-        let pokemonListItem = document.createElement('li');
-        let button = document.createElement('button');
-        button.innerText = pokemon.name;
-        button.classList.add('default-button');
-        pokemonListContainer.appendChild(pokemonListItem);
-        pokemonListItem.appendChild(button);
-        button.addEventListener('click', function () {
+        let pokemonListContainer = $('.list-group');
+        let pokemonListItem = document.createElement('<li class="list-group-item pokemon-list-item"></li>');
+        let button = document.createElement('<button class="btn primary-btn pokemon-button"></button>');
+        $('.pokemon-button').text(pokemon.name);
+        // button.classList.add('default-button');
+        $('.list-group').append(pokemonListItem);
+        $('.pokemon-list-item').append($('.pokemon-button'));
+        $('.pokemon-button').on('click', function () {
             showDetails(pokemon);
         })
 
