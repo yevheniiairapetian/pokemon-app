@@ -40,8 +40,8 @@ let pokemonRepository = (function () {
         let button = document.createElement('<button class="btn primary-btn pokemon-button"></button>');
         $('.pokemon-button').text(pokemon.name);
         // button.classList.add('default-button');
-        $('.list-group').append(pokemonListItem);
-        $('.pokemon-list-item').append($('.pokemon-button'));
+        $(pokemonListContainer).append(pokemonListItem);
+        $('.pokemon-list-item').append($(button);
         $('.pokemon-button').on('click', function () {
             showDetails(pokemon);
         })
