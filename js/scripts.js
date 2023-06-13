@@ -42,10 +42,10 @@ let pokemonRepository = (function () {
         // button.classList.add('default-button');
         pokemonListContainer.append(pokemonListItem);
         pokemonListItem.append(button);
-        button.attr('data-target','#my-modal');
-        button.attr('data-toggle','modal');
+        button.attr('data-target', '#my-modal');
+        button.attr('data-toggle', 'modal');
         button.on('click', function () {
-            
+
             showDetails(pokemon);
         })
 
@@ -105,18 +105,18 @@ let pokemonRepository = (function () {
         let modalTitle = $('<h3>' + pokemon.name + '</h3>');
         modalBody.empty();
         modalTitle.empty();
-        
-        
+
+
 
         let modalImage = $('<img class="modal-image">');
 
         modalImage.attr('src', pokemon.imageUrl);
 
-        let modalText = $('<p class="modal-text">' + 'Pokemon\'s Height: ' +pokemon.height + '</p>');
+        let modalText = $('<p class="modal-text">' + 'Pokemon\'s Height: ' + pokemon.height + '</p>');
 
         // modalText.text("Height: " + pokemon.height);
 
-        let modalAbilities = $('<p>' + 'Pokemon\s Weight: ' + pokemon.weight/10 +'</p>');
+        let modalAbilities = $('<p>' + 'Pokemon\s Weight: ' + pokemon.weight / 10 + '</p>');
         // modalAbilities.text("Weight: " + (pokemon.weight/10) + 'kg');
         modalHeader.append(modalTitle)
         modalTitle.append(modalPokemonName.toUpperCase());
@@ -139,7 +139,7 @@ let pokemonRepository = (function () {
         // modalCloseButton.addEventListener("click", function () {
         //     closeModal();
         //     //hides modal when clicked outside
-            
+
 
         // });
 
