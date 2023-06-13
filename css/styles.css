@@ -132,13 +132,10 @@ main{
     background-color: #adadad;
 }
 */
-nav a{
-    color:white;
-    text-decoration: none;
-    text-transform: uppercase;
-    text-align: center;
+/* nav a{
+    
     animation: nav-link-animation 3s ease;
-}
+} */
 /*
 */
 nav a img{
