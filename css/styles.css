@@ -4,7 +4,7 @@
    License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
+/* html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -23,9 +23,9 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-}
+} */
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+/* article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -87,8 +87,9 @@ span{
 .additional-info:hover{
     color:#F0E7E7;
 }
+*/
 
-@keyframes nav-link-animation{
+/* @keyframes nav-link-animation{
     0%{
         color: #pink;
     }
@@ -101,7 +102,9 @@ span{
     100%{
         color: pink;
     }
-}
+} */
+
+/*
 
 @keyframes nav-link-animation-2{
     0%{
@@ -128,7 +131,7 @@ nav{
 main{
     background-color: #adadad;
 }
-
+*/
 nav a{
     color:white;
     text-decoration: none;
@@ -136,13 +139,19 @@ nav a{
     text-align: center;
     animation: nav-link-animation 3s ease;
 }
-
-
+/*
+*/
 nav a img{
-    animation: animation-logo 2s linear;
+    animation: animation-logo 1.3s linear;
+}
+
+.container{
+    margin-top:180px;
 }
 
 
+
+/* 
 
 .additional-links{
     color: #F5f5f5;
@@ -162,12 +171,14 @@ nav a img{
     background-color:#6A6666;
     font-size:16px;
 }
+*/
 
 @keyframes animation-logo{
     100%{
         transform: rotate(360deg);
     }
 }
+/*
 
 @keyframes animation-btn{
     0%{
@@ -453,4 +464,4 @@ footer{
 footer .additional-links{
     padding:0;
 }
-}
+}  */
