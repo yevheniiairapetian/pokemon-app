@@ -43,7 +43,7 @@ let pokemonRepository = (function () {
                 let pokemon = {
                     name: item.name,
                     detailsUrl: item.url,
-                    // weight: item.weight,
+                    
 
                 };
                 add(pokemon);
@@ -64,6 +64,7 @@ let pokemonRepository = (function () {
             // Now we add the details to the item
             item.imageUrl = details.sprites.front_default;
             item.height = details.height;
+            item.weight = details.weight;
             item.types = details.types;
             // showModal(pokemon);
         }).catch(function (e) {
@@ -105,65 +106,23 @@ let pokemonRepository = (function () {
     }
     //function for showing the modal windows with the pokemon fetched results
     function showModal(pokemon) {
-        let modalBody = $(".modal-body");
+        // let modalBody = $(".modal-body");
         // modalBody.empty();
         let modalTitle = $(".modal-title");
         // modalTitle.empty();
         // let modalPokemonName = pokemon.name;
-        let modalHeader = $('.modal-header')
         
-        // modalContainer.classList.remove("modal-container-hidden");
-        // modalContainer.classList.add("is-visible");
+        modalTitle.text(pokemon.name.toUpperCase() + '\'s Stats');
+        let modalImage = $(".modal-image");
+        modalImage.attr("src", pokemon.imageUrl);
+
+        let modalText = $(".modal-text");
+        // modalText.text(pokemon.height)
+        modalText.text("Height: " + pokemon.height + " m"); //
+
+        let modalAbilities = $('.modal-abilities');
+        modalAbilities.text("Weight: " + (pokemon.weight/10) + 'kg');
         
-        modalTitle.text(pokemon.name);
-        modalHeader.append(modalTitle);
-        let modalImage = $('<img class="modal-image">');
-        modalImage.attr('src', pokemon.imageUrl);
-        modalBody.append(modalImage);
-
-        let modalText = $('<p cass="modal-text">' + 'Pokemon\'s Height: ' + pokemon.height + '</p>');
-        modalBody.append(modalText);
-        // modalText.text("Height: " + pokemon.height);
-
-        // let modalAbilities = $('<p>' + 'Pokemon\s Weight: ' + pokemon.weight / 10 + '</p>');
-        // modalAbilities.text("Weight: " + (pokemon.weight/10) + 'kg');
-        // modalTitle.append(modalPokemonName.toUpperCase());
-        // modalBody.append(modalAbilities);        
-
-        // let modalCloseButton = document.querySelector("#close-modal-button");
-
-        // modalCloseButton.innerText = "x";
-        // modalContainer.addEventListener('click', (e) => {
-        //     let target = e.target;
-        //     if (target === modalContainer) {
-        //         closeModal();
-        //     }
-        // });
-
-        // modalCloseButton.addEventListener("click", function () {
-        //     closeModal();
-        //     //hides modal when clicked outside
-
-
-        // });
-
-
-        //function hiding the modal window
-        // function closeModal() {
-        //     let modalContainer = document.querySelector("#modal-container");
-        //     modalContainer.classList.remove("is-visible");
-        //     modalContainer.classList.add("modal-container-hidden");
-        //     modalCloseButton.innerHtml = '';
-        // }
-        // //hides modal when escape is pressed
-        // window.addEventListener('keydown', (e) => {
-        //     let modalContainer = document.querySelector("#modal-container");
-        //     if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
-        //         closeModal();
-        //     }
-
-
-        // });
     }
 
     // this return statement returns the object with methods
