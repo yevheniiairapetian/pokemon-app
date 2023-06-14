@@ -32,25 +32,6 @@ let pokemonRepository = (function () {
         return pokemonList;
     }
 
-    //creates a list of pokemons and shows them when clicked
-
-    function addListItem(pokemon) {
-        let pokemonListContainer = $('.list-group');
-        let pokemonListItem = $('<li class="list-group-item"></li>');
-        let button = $('<button class="btn primary-btn pokemon-button"></button>');
-        button.text(pokemon.name);
-        // button.classList.add('default-button');
-        pokemonListContainer.append(pokemonListItem);
-        pokemonListItem.append(button);
-        button.attr('data-target', '#my-modal');
-        button.attr('data-toggle', 'modal');
-        button.on('click', function () {
-
-            showDetails(pokemon);
-        })
-
-    }
-
 
     function loadList() {
 
@@ -62,7 +43,7 @@ let pokemonRepository = (function () {
                 let pokemon = {
                     name: item.name,
                     detailsUrl: item.url,
-                    weight: item.weight,
+                    // weight: item.weight,
 
                 };
                 add(pokemon);
@@ -75,7 +56,6 @@ let pokemonRepository = (function () {
         })
     }
 
-
     function loadDetails(item) {
         let url = item.detailsUrl;
         return fetch(url).then(function (response) {
@@ -85,46 +65,70 @@ let pokemonRepository = (function () {
             item.imageUrl = details.sprites.front_default;
             item.height = details.height;
             item.types = details.types;
-            item.weight = details.weight;
-            showModal(item);
+            // showModal(pokemon);
         }).catch(function (e) {
             console.error(e);
         });
     }
 
+
+    //creates a list of pokemons and shows them when clicked
+
+    function addListItem(pokemon) {
+        let pokemonListContainer = $('.list-group');
+        let pokemonListItem = $('<li class="list-group-item"></li>');
+        let button = $('<button class="btn primary-btn pokemon-button"></button>');
+        button.text(pokemon.name);
+        // button.classList.add('default-button');
+        pokemonListContainer.append(pokemonListItem);
+        pokemonListItem.append(button);
+        button.attr('data-target', '#my-modal');
+        button.attr('data-toggle', 'modal');
+        
+        button.on('click', function () {
+
+            showDetails(pokemon);
+        })
+
+    }
+
+
+    
+
+    
     function showDetails(pokemon) {
-        loadDetails(pokemon);
+        // loadDetails(pokemon);
+        // .then(function () {
+            showModal(pokemon);
+        // })
+        
     }
     //function for showing the modal windows with the pokemon fetched results
     function showModal(pokemon) {
-
-        let modalHeader = $('.modal-header')
         let modalBody = $(".modal-body");
+        // modalBody.empty();
+        let modalTitle = $(".modal-title");
+        // modalTitle.empty();
+        // let modalPokemonName = pokemon.name;
+        let modalHeader = $('.modal-header')
+        
         // modalContainer.classList.remove("modal-container-hidden");
         // modalContainer.classList.add("is-visible");
-        let modalTitle = $('<h3>' + pokemon.name + '</h3>');
-        modalBody.empty();
-        modalTitle.empty();
-
-
-
+        
+        modalTitle.text(pokemon.name);
+        modalHeader.append(modalTitle);
         let modalImage = $('<img class="modal-image">');
-
         modalImage.attr('src', pokemon.imageUrl);
-
-        let modalText = $('<p class="modal-text">' + 'Pokemon\'s Height: ' + pokemon.height + '</p>');
-
-        // modalText.text("Height: " + pokemon.height);
-
-        let modalAbilities = $('<p>' + 'Pokemon\s Weight: ' + pokemon.weight / 10 + '</p>');
-        // modalAbilities.text("Weight: " + (pokemon.weight/10) + 'kg');
-        modalHeader.append(modalTitle)
-        modalTitle.append(modalPokemonName.toUpperCase());
-        modalBody.append(modalAbilities);
-        modalBody.append(modalText);
-        modalBody.append(modalAbilities);
         modalBody.append(modalImage);
 
+        let modalText = $('<p cass="modal-text">' + 'Pokemon\'s Height: ' + pokemon.height + '</p>');
+        modalBody.append(modalText);
+        // modalText.text("Height: " + pokemon.height);
+
+        // let modalAbilities = $('<p>' + 'Pokemon\s Weight: ' + pokemon.weight / 10 + '</p>');
+        // modalAbilities.text("Weight: " + (pokemon.weight/10) + 'kg');
+        // modalTitle.append(modalPokemonName.toUpperCase());
+        // modalBody.append(modalAbilities);        
 
         // let modalCloseButton = document.querySelector("#close-modal-button");
 
