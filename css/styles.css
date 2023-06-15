@@ -139,14 +139,17 @@ main{
 /*
 */
 nav a img{
-    animation: animation-logo 1.3s linear;
+    animation: animation-logo 1.4s linear;
 }
 
 .container{
-    margin-top:180px;
+    margin-top:230px;
 }
 
-
+.modal-image, .modal-image-back{
+    width:160px;
+    height:160px;
+}
 
 /* 
 
@@ -200,7 +203,10 @@ nav a img{
         background-position: 30% 90%;
     }
 }
+
 //animation for modal image
+
+
 @keyframes animation{
     0%{
         transform: translate(-6px);
@@ -213,6 +219,10 @@ nav a img{
     }
 }
 
+.modal-image{
+    animation: animation 2s linear infinite;
+}
+/*
 .default-button:hover{
     cursor:pointer;
     opacity:0.8;
