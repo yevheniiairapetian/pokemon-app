@@ -32,9 +32,15 @@
 
 
         <form class="form-inline my-2 my-lg-0" aria-label="Search section">
-          <input class="form-control mr-sm-2" type="search" aria-label="Search input field"
-            placeholder="Enter Pokemon's Name to Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <!-- <input class="form-control mr-sm-2" type="text" aria-label="Search input field"
+            placeholder="Enter Pokemon's Name to Search"> -->
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Search</span>
+              </div>
+              <input type="text" class="form-control mr-sm-2" placeholder="Enter Pokemon's Name" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+          <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
         </form>
 
       </div>

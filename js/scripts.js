@@ -135,13 +135,15 @@ let pokemonRepository = (function () {
         modalID.text(pokemon.name.toUpperCase() + '\'s ID: ' + pokemon.id);
 
         let modalImage = $(".modal-image");
+        // modalImage.empty();
         modalImage.attr("src", pokemon.imageUrl);
 
         let modalImageBack = $('.modal-image-back');
+        // modalImageBack.empty();
         modalImageBack.attr("src", pokemon.imageUrlBack);
         let modalText = $(".modal-text");
         // modalText.text(pokemon.height)
-        modalText.text("Height: " + pokemon.height + " m"); //
+        modalText.text("Height: " + pokemon.height/10 + " m"); //
 
         let modalAbilities = $('.modal-abilities');
         modalAbilities.text("Weight: " + (pokemon.weight / 10) + 'kg');
