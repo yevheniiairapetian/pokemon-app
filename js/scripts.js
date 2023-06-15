@@ -31,22 +31,22 @@ let pokemonRepository = (function () {
     //this function returns the array of pokemons
 
     function getAll() {
-        
+
         return pokemonList;
     }
 
 
     function loadList() {
 
-        
+
         return fetch(apiUrl).then(function (response) {
-            
+
             return response.json();
-            
+
         }).then(function (json) {
-            
+
             json.results.forEach(function (item) {
-                
+
                 let pokemon = {
                     name: item.name,
                     detailsUrl: item.url,
@@ -54,10 +54,10 @@ let pokemonRepository = (function () {
 
 
                 };
-                
-                
+
+
                 add(pokemon);
-                
+
             });
         }).catch(function (e) {
 
@@ -68,14 +68,14 @@ let pokemonRepository = (function () {
     }
 
     function loadDetails(item) {
-        
+
         let url = item.detailsUrl;
-        
+
         return fetch(url).then(function (response) {
-            
+
             return response.json();
         }).then(function (details) {
-            
+
             // Now we add the details to the item
             item.id = details.id;
             item.imageUrl = details.sprites.front_default;
@@ -104,7 +104,7 @@ let pokemonRepository = (function () {
         button.attr('data-toggle', 'modal');
 
         button.on('click', function () {
-            
+
             loadDetails(pokemon);
         })
 
@@ -131,9 +131,9 @@ let pokemonRepository = (function () {
 
         modalTitle.text(pokemon.name.toUpperCase() + '\'s Stats');
         let modalID = $(".modal-ID");
-        
+
         modalID.text(pokemon.name.toUpperCase() + '\'s ID: ' + pokemon.id);
-    
+
         let modalImage = $(".modal-image");
         modalImage.attr("src", pokemon.imageUrl);
 
@@ -165,17 +165,17 @@ let pokemonRepository = (function () {
 
 
 
-// this return statement returns the object with methods
-return {
-    add: add,
-    getAll: getAll,
-    loadList: loadList,
-    showModal: showModal,
-    loadDetails: loadDetails,
-    addListItem: addListItem,
-    showDetails: showDetails,
+    // this return statement returns the object with methods
+    return {
+        add: add,
+        getAll: getAll,
+        loadList: loadList,
+        showModal: showModal,
+        loadDetails: loadDetails,
+        addListItem: addListItem,
+        showDetails: showDetails,
 
-};
+    };
 
 })();
 
