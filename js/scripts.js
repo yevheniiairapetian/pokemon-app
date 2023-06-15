@@ -66,7 +66,7 @@ let pokemonRepository = (function () {
             item.height = details.height;
             item.weight = details.weight;
             item.types = details.types;
-            // showModal(pokemon);
+            showModal(item);
         }).catch(function (e) {
             console.error(e);
         });
@@ -88,7 +88,7 @@ let pokemonRepository = (function () {
         
         button.on('click', function () {
 
-            showDetails(pokemon);
+            loadDetails(pokemon);
         })
 
     }
