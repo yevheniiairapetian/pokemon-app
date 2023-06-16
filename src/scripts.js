@@ -51,6 +51,8 @@ let pokemonRepository = (function () {
                     name: item.name,
                     detailsUrl: item.url,
                     id: item.id,
+                    // gender:item.gender.name,
+
 
 
                 };
@@ -83,6 +85,7 @@ let pokemonRepository = (function () {
             item.height = details.height;
             item.weight = details.weight;
             item.types = details.types;
+            // item.gender = details.gender.name;
             showModal(item);
         }).catch(function (e) {
             console.error(e);
@@ -94,7 +97,7 @@ let pokemonRepository = (function () {
 
     function addListItem(pokemon) {
         let pokemonListContainer = $('.list-group');
-        let pokemonListItem = $('<li class="list-group-item bg-light"></li>');
+        let pokemonListItem = $('<li class="list-group-item pokemon-item m-2 bg-light p-3"></li>');
         let button = $('<button class="btn primary-btn pokemon-button w-100 p-3 text-light border-primary rounded bg-primary"></button>');
         button.text(pokemon.name.toUpperCase());
         // button.classList.add('default-button');
@@ -137,13 +140,14 @@ let pokemonRepository = (function () {
         let modalImage = $(".modal-image");
         // modalImage.empty();
         modalImage.attr("src", pokemon.imageUrl);
-
+        // let modalGender = $(".modal-gender");
+        // modalGender.text('Gender: ' + pokemon.gender);
         let modalImageBack = $('.modal-image-back');
         // modalImageBack.empty();
         modalImageBack.attr("src", pokemon.imageUrlBack);
         let modalText = $(".modal-text");
         // modalText.text(pokemon.height)
-        modalText.text("Height: " + pokemon.height/10 + " m"); //
+        modalText.text("Height: " + pokemon.height / 10 + " m"); //
 
         let modalAbilities = $('.modal-abilities');
         modalAbilities.text("Weight: " + (pokemon.weight / 10) + 'kg');
