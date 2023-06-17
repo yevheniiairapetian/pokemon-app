@@ -1,9 +1,10 @@
 // created an array of objects: array is a list of pokemons, 
 // each object is a pokemon with respective properties. 
 //add the IIFE containing the pokemonList array
-// window.onload = function () {
-//     document.querySelector('.logo-link').style.animation = 'nav-link-animation 3s linear';
-// }
+ window.onload = function () {
+
+    
+const myTimeout = setTimeout($('.spinner-border').show(), 5000); }
 
 
 
