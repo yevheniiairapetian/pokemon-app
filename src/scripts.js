@@ -1,10 +1,11 @@
 // created an array of objects: array is a list of pokemons, 
 // each object is a pokemon with respective properties. 
 //add the IIFE containing the pokemonList array
- window.onload = function () {
+$(document).ready( function()
+{
+  $('.sp').addClass('sp-none');
+  });
 
-// const myTimeout2 = setTimeout($('.sp').show(2000), 3000);    
-const myTimeout = setTimeout($('.sp').hide(), 5000); }
 
 
 

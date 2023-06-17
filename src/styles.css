@@ -31,3 +31,8 @@ nav a img{
 .pokemon-button{
     font-size:14px;
 }
+
+.sp-none{
+    visibility:hidden;
+    transition: visibility 2s ease-in-out;
+}
