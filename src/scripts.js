@@ -6,7 +6,37 @@ $(document).ready(function () {
 });
 
 
+$(function () {
+    //Get the button
+    let mybutton = document.getElementById("btn-back-to-top");
 
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        if (
+            document.body.scrollTop > 20 ||
+            document.documentElement.scrollTop > 20
+        ) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+    // When the user clicks on the button, scroll to the top of the document
+    mybutton.addEventListener("click", backToTop);
+
+    function backToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+}());
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
 
 let pokemonRepository = (function () {
     let pokemonList = [];
@@ -98,7 +128,7 @@ let pokemonRepository = (function () {
 
     function addListItem(pokemon) {
         let pokemonListContainer = $('.list-group');
-        let pokemonListItem = $('<li class="list-group-item pokemon-item m-2 bg-light p-3"></li>');
+        let pokemonListItem = $('<li class="list-group-item pokemon-item m-2 bg-light p-3" data-toggle="tooltip" data-placement="top" title="Click on the button to display the Pokemon"></li>');
         let button = $('<button class="btn primary-btn pokemon-button w-100 p-3 text-light border-primary rounded bg-primary"></button>');
         button.text(pokemon.name.toUpperCase());
         // button.classList.add('default-button');

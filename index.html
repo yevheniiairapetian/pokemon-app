@@ -18,7 +18,7 @@
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" aria-label="Main">
 
       <a class="navbar-brand col-8" href="index.html">
-        <img src="assets/pokemon-logo.png" alt="An image showing a pokemon ball"></a><br>
+        <img id="top" data-toggle="tooltip" data-placement="top" title="Click to reload the page" src="assets/pokemon-logo.png" alt="An image showing a pokemon ball"></a><br>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
         aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,9 +30,9 @@
         <form class="form-inline my-2 my-lg-0 col-12" aria-label="Search section">
           <div class="input-group">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroup-sizing-default">Search</span>
+              <span class="input-group-text" data-toggle="tooltip" data-placement="top" title="Type in the Pokemon to search" placeholder="Enter Pokemon's Name" id="inputGroup-sizing-default">Search</span>
             </div>
-            <input type="text" class="form-control mr-sm-2" placeholder="Enter Pokemon's Name" aria-label="Default"
+            <input type="text" class="form-control mr-sm-2" data-toggle="tooltip" data-placement="top" title="Type in the Pokemon to search" placeholder="Enter Pokemon's Name" aria-label="Default"
               aria-describedby="inputGroup-sizing-default">
           </div>
         </form>
@@ -78,7 +78,7 @@
           <div class="modal-header bg-dark text-white">
             <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true" class="text-white">&times;</span>
+              <span aria-hidden="true" class="text-white" data-toggle="tooltip" data-placement="top" title="Click to close the modal">&times;</span>
             </button>
 
           </div>
@@ -93,7 +93,7 @@
             <img class="modal-image-back float-right" alt="An image showing a Pokemon from the back ">
           </div>
           <div class="modal-footer bg-dark text-white">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Click to close the modal" data-dismiss="modal">Close</button>
           </div>
         </div>
       </div>
@@ -101,6 +101,14 @@
     <!-- end of modal -->
   </main>
   <!-- footer -->
+  <button
+        data-toggle="tooltip" data-placement="top" title="Back to top"
+        type="button"
+        class="btn btn-dark btn-floating btn-lg"
+        id="btn-back-to-top"
+        >
+  <i>&#8593;</i>
+</button>
   <footer class="bg-dark text-light text-center text-lg-start">
     <!-- Copyright -->
     <div class="text-center p-3 text-light">
@@ -108,6 +116,7 @@
       <br><a class="text-light" target="_blank" href="https://icons8.com/">Icons used with permission of icons8.com</a>
     </div>
     <!-- Copyright -->
+    
   </footer>
   <!-- end of footer -->
 
