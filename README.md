@@ -11,6 +11,7 @@
 #### Bootstrap v4.5.0, jQuery v3.5.1, fetch and promise polyfills.
 ### External API:
 #### https://pokeapi.co/
+#### [App's URL](https://yevheniiairapetian.github.io/pokemon-app/)
 #### To clone the app use the `git clone git@github.com:yevheniiairapetian/pokemon-app.git`command 
 #### or download directly pressing on `<> Code` button > `Download ZIP`. 
 #### Then open the `index.html` file to view the app in your preferred browser.
