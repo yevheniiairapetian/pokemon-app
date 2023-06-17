@@ -1,5 +1,5 @@
 # Pokemon app (in progress)
-## This repo contains a simple jQuery and Bootstrap [App](https://yevheniiairapetian.github.io/pokemon-app/) fetching pokemons from an external API and displaying them on the page. The user can click and view the Pokemons' information in a modal window. There's also a live-search input field to find specific Pokemons by name. While the user is waiting for the fetch response, the page displays a nice spinner.
+## This repo contains a simple jQuery and Bootstrap [App](https://yevheniiairapetian.github.io/pokemon-app/) fetching pokemons from an external API and displaying them on the page. The user can click and view the Pokemons' information in a modal window. There's also a live-search input field to find specific Pokemons by name. While the user is waiting for the fetch response, the page displays a nice spinner. Tooltips help to navigate the app.
 ### Technologies used:
 #### HTML5
 #### Ajax
