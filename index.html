@@ -44,21 +44,32 @@
 
     </nav>
   </header>
+
   <!-- end nav section -->
   <!-- main section with pokemon list and modal -->
   <main class="container-fluid">
+    <div class="sp d-flex mb-3 justify-content-center">
+      <div class="spinner-grow text-danger" role="status">
+
+      </div>
+
+      <span class="text-white">Just a moment...</span>
+    </div>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Welcome!</h1>
+        <p class="lead">This app displays Pokemons' information. You can find 1281 Pokemon's here!</p>
+        <hr class="my-4">
+        <p>Click or tap on the Pokemon button to see the details. Use the app's real-time search to search for a Pokemon
+          of your choice.</p>
+      </div>
+    </div>
     <!-- pokemon list -->
     <ul class="list-group d-flex flex-row flex-wrap justify-content-center"></ul>
     <!-- end of pokemon list -->
     <!-- spinner -->
- <div class="sp d-flex mb-5 pb-5 pt-5 justify-content-center">
-<div class="spinner-grow pr-1 mr-1 text-danger" role="status">
- 
-</div>
 
-<span class="text-white">Just a moment...</span>
-</div>
-<!-- end spinner -->
+    <!-- end spinner -->
     <!-- modal -->
     <div class="modal fade" id="my-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
       aria-hidden="true">

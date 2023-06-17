@@ -1,10 +1,9 @@
 // created an array of objects: array is a list of pokemons, 
 // each object is a pokemon with respective properties. 
 //add the IIFE containing the pokemonList array
-$(document).ready( function()
-{
-  $('.sp').addClass('sp-none');
-  });
+$(document).ready(function () {
+    $('.sp').addClass('sp-none');
+});
 
 
 
