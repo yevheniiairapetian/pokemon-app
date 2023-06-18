@@ -67,3 +67,7 @@ nav a img{
   ::-webkit-scrollbar-thumb:hover {
     background: #529fcc; 
   }
+
+  .logo-name{
+    font-size:16px;
+  }
