@@ -17,6 +17,6 @@
 #### or download directly pressing on `<> Code` button > `Download ZIP`. 
 #### Then open the `index.html` file to view the app in your preferred browser.
 ### Contact:
-#### Feel free to contact me [via LinkenIn](https://www.linkedIn.com/in/yevhenii-airapetian/) or [email](mailto:sonkozhenia11@gmail.com)! Have a nice day!
+#### Feel free to contact me [via LinkedIn](https://www.linkedin.com/in/yevhenii-airapetian/) or [email](mailto:sonkozhenia11@gmail.com)! Have a nice day!
 
 
