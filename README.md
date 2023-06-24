@@ -12,9 +12,11 @@
 ### External API:
 #### https://pokeapi.co/
 #### The App can be accessed via this link: https://yevheniiairapetian.github.io/pokemon-app/
+### How to use:
 #### To clone the app use the `git clone git@github.com:yevheniiairapetian/pokemon-app.git`command 
 #### or download directly pressing on `<> Code` button > `Download ZIP`. 
 #### Then open the `index.html` file to view the app in your preferred browser.
+### Contact:
 #### Feel free to contact me [via LinkenIn](https://www.linkedin.com/in/yevhenii-airapetian/) or [email](mailto:sonkozhenia11@gmail.com)! Have a nice day!
 
 
