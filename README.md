@@ -1,7 +1,15 @@
 # Pokemon App
 
 ## Description
-This repository contains a simple jQuery and Bootstrap App fetching Pokemons from an external API and displaying them on the page.
+This repository contains a simple Pokemon app developed with jQuery and Bootstrap that fetches Pokemon information from the external Pokedex API and displays it on the page.
+
+## Features
+- Fetch Pokemon data from the Pokedex API
+- Displaying Pokemon data on the page
+- Users can click on the Pokemon button to display a modal window with the Pokemon's name, height, weight, and picture
+- Users can use the live search option to search for the Pokemon by name
+- Users can click on the _back to top_ button for quick navigation
+- The app is responsive
 
 ## Technologies Used
 - Javascript
@@ -17,6 +25,7 @@ This repository contains a simple jQuery and Bootstrap App fetching Pokemons fro
 - jQuery v3.5.1 for interactivity
 - Fetch and promise polyfills for older browsers' support
 - External Pokedex API (for information about Pokemon)
+- Github pages for deployment
 
 ## External API 
 As mentioned, the app relies on the external Pokedex API: 
