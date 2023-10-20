@@ -4,6 +4,7 @@
 This repository contains a simple jQuery and Bootstrap App fetching Pokemons from an external API and displaying them on the page.
 
 ## Technologies Used
+- Javascript
 - HTML5
 - Ajax
 - jQuery
