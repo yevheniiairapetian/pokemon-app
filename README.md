@@ -20,6 +20,12 @@ This repository contains a simple Pokemon app developed with jQuery and Bootstra
 - CSS3
 - Responsive design
 
+## Project Screenshot
+[(<a href="https://ibb.co/Mc8mYBT"><img src="https://i.ibb.co/HTLVn3j/2023-10-13-23h17-56.png" alt="Project 2 Screenshot" border="0"></a>)]([https://youtu.be/vt5fpE0bzSY](https://streamable.com/qglgcd))   
+## Project In Use Preview
+_Please click on the video below to watch it_   
+[![Watch the video](https://i.ibb.co/HTLVn3j/2023-10-13-23h17-56.png)](https://streamable.com/5lurz9)
+
 ## Project Dependencies
 - Bootstrap v4.5.0 for design/responsive design
 - jQuery v3.5.1 for interactivity
