@@ -47,7 +47,7 @@ To clone the app use the following command:
 Or download directly by clicking on <> Code button > Download ZIP. Then navigate to the folder using the ```cd pokemon-app``` terminal command or open the index.html file to view the app directly in your browser.
 
 ## Contact:
-Feel free to contact me via[ LinkedIn](https://www.linkedin.com/in/yevhenii-airapetian/) or  
+Feel free to contact me via[ LinkedIn](https://www.linkedin.com/in/yevheniiairapetian/) or  
 [email](mailto:contact@yevheniiairapetian.com) or 
 via the contact information on the [website](https://yevheniiairapetian.github.io/portfolio-website/contact.html) 
 
