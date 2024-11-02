@@ -128,7 +128,7 @@ let pokemonRepository = (function () {
 
     function addListItem(pokemon) {
         let pokemonListContainer = $('.list-group');
-        let pokemonListItem = $('<li class="list-group-item pokemon-item m-2 bg-light p-3" data-toggle="tooltip" data-placement="top" title="Click on the button to display the Pokemon"></li>');
+        let pokemonListItem = $('<li class="list-group-item pokemon-item m-2 bg-light p-3" data-toggle="tooltip" data-placement="top" title="Show Pokemon details"></li>');
         let button = $('<button class="btn primary-btn pokemon-button w-100 p-3 text-light border-primary rounded bg-primary"></button>');
         button.text(pokemon.name.toUpperCase());
         // button.classList.add('default-button');
