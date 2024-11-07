@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
-import { Image } from 'react-bootstrap';
 import $ from 'jquery';
 import logo from './img/logo.png';
+import { Navbar, Container, Nav, Image } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
+import question from './img/question.png'
 
-Modal.setAppElement('#root'); // Set your root element for accessibility
 
 export const PokemonView = () => {
-
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const openModal = () => setModalIsOpen(true);
   const closeModal = () => setModalIsOpen(false);
+  // const [visible, setVisible] = useState(false);
+  const [expanded, setExpanded] = useState(false);
+ 
   // created an array of objects: array is a list of pokemons, 
   // each object is a pokemon with respective properties. 
   //add the IIFE containing the pokemonList array
@@ -115,17 +118,19 @@ export const PokemonView = () => {
     //creates a list of pokemons and shows them when clicked
 
     function addListItem(pokemon) {
-      let pokemonListContainer = $('.list-group');
-      let pokemonListItem = $('<li class="list-group-item pokemon-item m-2 bg-light p-3" data-toggle="tooltip" data-placement="top" title="Show Pokemon details"></li>');
-      let button = $('<button class="btn primary-btn pokemon-button w-100 p-3 text-light border-primary rounded bg-primary"></button>');
-      button.text(pokemon.name.toUpperCase());
+      let pokemonListContainer = document.querySelector('.list-group');
+      let pokemonListItem = document.createElement('li');
+      pokemonListItem.classList.add('list-group-item', 'pokemon-item', 'm-2', 'bg-light', 'p-3');
+      let button = document.createElement('button');
+      button.classList.add('btn', 'primary-btn', 'pokemon-button', 'w-100', 'p-3', 'text-light', 'border-primary', 'rounded', 'bg-primary');
+      button.innerText = pokemon.name.toUpperCase();
       // button.classList.add('default-button');
-      pokemonListContainer.append(pokemonListItem);
-      pokemonListItem.append(button);
-      button.attr('data-target', '#my-modal');
-      button.attr('data-toggle', 'modal');
+      pokemonListContainer.appendChild(pokemonListItem);
+      pokemonListItem.appendChild(button);
+      // button.attr('data-target', '#my-modal');
+      // button.attr('data-toggle', 'modal');
 
-      button.on('click', function () {
+      button.addEventListener('click', function () {
 
         loadDetails(pokemon);
         openModal();
@@ -148,29 +153,29 @@ export const PokemonView = () => {
     }
     //function for showing the modal windows with the pokemon fetched results
     function showModal(pokemon) {
-      let modalTitle = $('.modal-title');
+      let modalTitle = document.querySelector('.modal-title');
       // modalTitle.empty();
       // let modalPokemonName = pokemon.name;
 
-      modalTitle.text(pokemon.name.toUpperCase() + '\'s Stats');
-      let modalID = $('.modal-ID');
+      modalTitle.innerText = pokemon.name.toUpperCase() + '\'s Stats';
+      let modalID = document.querySelector('.modal-ID');
 
-      modalID.text(pokemon.name.toUpperCase() + '\'s ID: ' + pokemon.id);
+      modalID.innerText = pokemon.name.toUpperCase() + '\'s ID: ' + pokemon.id;
 
-      let modalImage = $('.modal-image');
+      let modalImage = document.querySelector('.modal-image');
       // modalImage.empty();
-      modalImage.attr('src', pokemon.imageUrl);
+      modalImage.setAttribute('src', pokemon.imageUrl ? pokemon.imageUrl : question);
       // let modalGender = $(".modal-gender");
       // modalGender.text('Gender: ' + pokemon.gender);
-      let modalImageBack = $('.modal-image-back');
+      let modalImageBack = document.querySelector('.modal-image-back');
       // modalImageBack.empty();
-      modalImageBack.attr('src', pokemon.imageUrlBack);
-      let modalText = $('.modal-text');
+      modalImageBack.setAttribute('src', pokemon.imageUrlBack ? pokemon.imageUrlBack : question);
+      let modalText = document.querySelector('.modal-text');
       // modalText.text(pokemon.height)
-      modalText.text('Height: ' + pokemon.height / 10 + ' m'); //
+      modalText.innerText = 'Height: ' + pokemon.height / 10 + ' m'; //
 
-      let modalAbilities = $('.modal-abilities');
-      modalAbilities.text('Weight: ' + (pokemon.weight / 10) + 'kg');
+      let modalAbilities = document.querySelector('.modal-abilities');
+      modalAbilities.innerText = 'Weight: ' + (pokemon.weight / 10) + 'kg';
 
     }
 
@@ -214,47 +219,44 @@ export const PokemonView = () => {
   })
   return (
     <>
-      <div className='bg-secondary'>
-        <header>
-          <nav className='navbar fixed-top navbar-expand-lg navbar-dark bg-dark' aria-label='Main'>
 
-            <a className='navbar-brand col-8' href='index.html'>
-              <Image id='top'
-                // data-toggle='tooltip' 
-                // data-placement='top' 
-                title='Click to reload the page' src={logo} alt='An image showing a pokemon ball' /><span className='logo-name'>Pokemon App</span></a><br />
 
-            <button className='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarTogglerDemo02'
-              aria-controls='navbarTogglerDemo02' aria-expanded='false' aria-label='Toggle navigation'>
-              <span className='navbar-toggler-icon'></span>
-            </button>
 
-            <div className='collapse navbar-collapse' id='navbarTogglerDemo02'>
 
-              <form className='form-inline my-2 my-lg-0 col-12' aria-label='Search section'>
+      <Navbar expanded={expanded} className="page-header" expand="xl" id="navigation">
+        <Container className="navigation">
+          <Navbar.Brand className="p-2 brand" as={Link} to="/" expand="lg">
+
+            <span onClick={() => window.location.reload()} className='navbar-brand col-8'>
+              <Image onClick={() => setExpanded(false)} id='top' title='Click to reload the page' src={logo} alt='An image showing a pokemon ball' /><span className='logo-name'>Pokemon App</span>
+
+              </span><br />
+          </Navbar.Brand>
+          <Navbar.Toggle id="tgl" onClick={() => setExpanded(!expanded)} />
+          <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+            <Nav>
+            <form className='form-inline my-2 my-lg-0 col-12' aria-label='Search section'>
                 <div className='input-group'>
                   <div className='input-group-prepend'>
                     <span className='input-group-text'
                       // data-toggle='tooltip' 
                       // data-placement='top' 
-                      title='Type in the Pokemon to search' placeholder='Enter Pokemon"s Name' id='inputGroup-sizing-default'>Search</span>
+                      title='Type in the Pokemon to search' placeholder='Enter Pokemon&#39;s Name' id='inputGroup-sizing-default'>Search</span>
                   </div>
                   <input type='text' className='form-control mr-sm-2'
                     // data-toggle='tooltip' 
                     // data-placement='top' 
-                    title='Type in the Pokemon to search' placeholder='Enter Pokemon"s Name' aria-label='Default'
+                    title='Type in the Pokemon to search' placeholder='Enter Pokemon&#39;s Name' aria-label='Default'
                     aria-describedby='inputGroup-sizing-default' />
                 </div>
               </form>
 
-            </div>
+            </Nav>
 
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
 
-
-
-          </nav >
-        </header >
-      </div >
 
       <main className='container-fluid'>
         <div className='sp d-flex mb-3 justify-content-center'>
@@ -267,9 +269,9 @@ export const PokemonView = () => {
         <div className='jumbotron jumbotron-fluid bg-dark'>
           <div className='container text-light'>
             <h1 className='display-4 text-white'>Welcome!</h1>
-            <p className='lead'>The Pokemon App displays Pokemon information. You can find 1281 Pokemon here!</p>
+            <p className='lead'>The <span className='jumbo-app-name'>Pokemon App</span> displays Pokemon information. You can find 1281 Pokemon here!</p>
             <hr className='my-4 bg-light' />
-            <p>Click or tap on the Pokemon button to see the details. Use the app's real-time search to search for a Pokemon
+            <p>Click or tap on the <span className='jumbo-pokemon-button'>Pokemon button</span> to see the details. Use the app's real-time search to search for a Pokemon
               of your choice.</p>
           </div>
         </div>
@@ -292,17 +294,17 @@ export const PokemonView = () => {
 
               title='Click to close'>&times;</span>
           </button>
-          <hr style={{ color: '#000' }} />
+          <hr style={{ color: 'white' }} />
           <p id="modalID" className='modal-ID text-center'></p>
 
           <p className='modal-text text-center'></p>
 
           <p className='modal-abilities text-center'></p>
 
-          <Image src="" className='modal-image float-left' alt='An image showing a Pokemon from the front' />
-          <Image src="" className='modal-image-back float-right' alt='An image showing a Pokemon from the back ' />
+          <img src="" className='modal-image float-left' alt='An image showing a Pokemon from the front' />
+          <img src="" className='modal-image-back float-right' alt='An image showing a Pokemon from the back ' />
 
-          <hr style={{ color: '#000' }} />
+          <hr style={{ color: 'white' }} />
           <button className="close-btn btn btn-secondary" onClick={closeModal}>Close</button>
         </Modal>
 

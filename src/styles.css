@@ -3,8 +3,31 @@ nav a img{
     animation: animation-logo 1.4s linear;
 }
 
+body{
+  background-color: #6c757d;
+}
+
 .container-fluid{
     margin-top:180px;
+}
+
+.jumbotron{
+  background-color: #343a40 !important;
+  padding: 64px 0;
+  margin-bottom: 32px;
+}
+
+.jumbo-app-name{
+  color: #ff6d7e;
+}
+
+.jumbo-pokemon-button, .display-4{
+  color: dodgerblue !important;
+}
+
+.display-4 {
+  font-size: 2.9rem;
+  margin-bottom: 14px;
 }
 
 .modal-image, .modal-image-back{
@@ -20,6 +43,36 @@ nav a img{
 
 .close-btn{
   float:right;
+}
+
+.navbar{
+  background-color: #343a40;
+}
+
+.navbar-brand{
+  display: inline-block;
+}
+
+.logo-name{
+  color: whitesmoke;
+  font-size: 18px !important;
+}
+
+span.input-group-text{
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  height: 48px;
+}
+
+span.navbar-toggler-icon{
+  background:url('./img/navbar-toggler-icon.svg') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 100% !important;
+}
+
+.container-fluid{
+  margin-top: 0;
 }
 
 .close{
