@@ -13,7 +13,8 @@ Read more about:
 - The app is responsive
 - Progressive Web App
 - Fetches and displays Pokemon data from the Pokedex API
-- Users can click on the Pokemon button to display a modal window with the Pokemon's name, height, weight, and picture
+- Users can click on the Pokemon button to display a modal window with the Pokemon's name, height, weight, and picture (front and back)
+- If the API sends no front or back Pokemon picture, a placeholder image is shown for a better user experience
 - Users can use the live search option to search for a Pokemon by name
 - Users can click on the _back to top_ button for quick navigation
 - Displays a simple loading animation while the app fetches data
