@@ -1,11 +1,11 @@
 {
-    "name": "Better Wetter App: Weather Today",
-    "homepage": "https://better-wetter.com",
+    "name": "Pokemon App",
+    "homepage": "https://pikalist.vercel.app/",
 
-    "short_name": "Better Wetter App",
-    "theme_color": "whitesmoke",
-    "background_color": "#337cb4",
-    "description": "Get information about the current weather in any city of the world",
+    "short_name": "Pokemon App",
+    "theme_color": "#343a40",
+    "background_color": "#343a40",
+    "description": "Get information about Pokemon",
     "display": "standalone",
     "orientation": "portrait",
     "scope": "/",

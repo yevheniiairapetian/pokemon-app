@@ -1,8 +1,8 @@
 {
-  "name": "Better Wetter App: Weather Today",
-  "short_name": "Better Wetter App",
-  "theme_color": "whitesmoke",
-  "background_color": "#337cb4",
+  "name": "Pokemon App",
+  "short_name": "Pokemon App",
+  "theme_color": "darkslategray",
+  "background_color": "darkslategray",
   "display": "fullScreen",
   "orientation": "portrait",
   "scope": "/",

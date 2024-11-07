@@ -259,7 +259,7 @@ export const PokemonView = () => {
 
 
       <main className='container-fluid'>
-        <div className='sp d-flex mb-3 justify-content-center'>
+        <div className='sp d-flex mb-4 mt-4 justify-content-center'>
           <div className='spinner-grow text-danger' role='status'>
 
           </div>
