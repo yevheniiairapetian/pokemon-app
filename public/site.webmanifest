@@ -1,0 +1,28 @@
+{
+    "name": "Better Wetter App: Weather Today",
+    "homepage": "https://better-wetter.com",
+
+    "short_name": "Better Wetter App",
+    "theme_color": "whitesmoke",
+    "background_color": "#337cb4",
+    "description": "Get information about the current weather in any city of the world",
+    "display": "standalone",
+    "orientation": "portrait",
+    "scope": "/",
+    "start_url": ".",
+    "icons": [
+        {
+            "src": "./android-chrome-144x144.png",
+            "sizes": "144x144",
+            "type": "image/png",
+            "purpose": "any"
+          },
+        {
+            "src": "/maskable-icon.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+    
+  }
