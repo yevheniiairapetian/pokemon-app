@@ -227,7 +227,7 @@ export const PokemonView = () => {
         <Container className="navigation">
           <Navbar.Brand className="p-2 brand" as={Link} to="/" expand="lg">
 
-            <span onClick={() => window.location.reload()} className='navbar-brand col-8'>
+            <span className='navbar-brand col-8'>
               <Image onClick={() => setExpanded(false)} id='top' title='Click to reload the page' src={logo} alt='An image showing a pokemon ball' /><span className='logo-name'>Pokemon App</span>
 
               </span><br />
